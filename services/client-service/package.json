@@ -1,0 +1,25 @@
+{
+    "name": "client-service",
+    "version": "1.0.0",
+    "description": "Service de gestion des clients pour Roue Libre",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "dev": "nodemon src/app.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "client-service": "file:",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "helmet": "^7.1.0",
+        "joi": "^17.11.0",
+        "mongoose": "^8.0.3",
+        "winston": "^3.11.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "nodemon": "^3.0.2"
+    }
+}

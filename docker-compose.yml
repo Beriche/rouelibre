@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  client-service:
+    build: ./client-service
+    container_name: client-service
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/rouelibre
+      - PORT=3000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./client-service:/app
+      - /app/node_modules
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

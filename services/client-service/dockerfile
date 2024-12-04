@@ -1,0 +1,17 @@
+# Utiliser l'image officielle de Node service
+FROM node:18
+
+#installer les dépendance 
+RUN npm install
+
+#Port d'accées à l'application, Ecoute sur le port 3000
+EXPOSE 3000 
+
+#Copier les fichier nécessaires 
+COPY package*.json ./
+
+# répertoire de travail dans le conteneur
+WORKDIR /app
+
+#Commande pour démarrer l'application
+CMD [ "node","app.js" ]
